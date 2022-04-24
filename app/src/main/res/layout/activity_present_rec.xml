@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PresentRecActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/present_swipe">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_present"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <ImageView
+        android:id="@+id/imgNoRecordspr"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/chatroom"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvNoRecordspr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No Records to show"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</RelativeLayout>
