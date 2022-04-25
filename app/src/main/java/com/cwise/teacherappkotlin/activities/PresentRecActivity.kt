@@ -27,7 +27,7 @@ class PresentRecActivity : AppCompatActivity() {
         presentRV = findViewById(R.id.rv_present)
         getPresentRec("present")
     }
-assas dsad
+    ss wwwww
     private fun getPresentRec(status: String) {
         Loading.show(this)
         val retrofit =
