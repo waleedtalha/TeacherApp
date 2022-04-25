@@ -1,9 +1,9 @@
 package com.cwise.teacherappkotlin.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cwise.teacherappkotlin.ApiPost
@@ -19,7 +19,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class PresentRecActivity : AppCompatActivity() {
-    private lateinit var presentRV:RecyclerView
+    private lateinit var presentRV: RecyclerView
     private lateinit var childRecRes: ChildRecRes
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +30,14 @@ class PresentRecActivity : AppCompatActivity() {
 
     private fun getPresentRec(status: String) {
         Loading.show(this)
-        val retrofit=Retrofit.Builder().baseUrl("https://sts.mobifinplus.com/api/").addConverterFactory(
-            GsonConverterFactory.create())
-            .build()
+        val retrofit =
+            Retrofit.Builder().baseUrl("https://sts.mobifinplus.com/api/").addConverterFactory(
+                GsonConverterFactory.create()
+            )
+                .build()
         val service = retrofit.create(ApiPost::class.java)
-        childRecRes= ChildRecRes(null.toString(),status)
-        service.getPresentRec(childRecRes).enqueue(object :Callback<ChildRecRes>{
+        childRecRes = ChildRecRes(null.toString(), status)
+        service.getPresentRec(childRecRes).enqueue(object : Callback<ChildRecRes> {
             override fun onResponse(call: Call<ChildRecRes>, response: Response<ChildRecRes>) {
                 if (response.isSuccessful) run {
                     var list: List<Datum> = response.body()?.data!!
@@ -48,13 +50,13 @@ class PresentRecActivity : AppCompatActivity() {
                     }
                 } else {
                     Loading.dismiss()
-                    Log.wtf("response","fail")
+                    Log.wtf("response", "fail")
                 }
             }
 
             override fun onFailure(call: Call<ChildRecRes>, t: Throwable) {
                 Loading.dismiss()
-                Toast.makeText(applicationContext,t.message,Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, t.message, Toast.LENGTH_SHORT).show()
             }
 
         })

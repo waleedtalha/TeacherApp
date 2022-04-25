@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.PresentRecActivity">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/present_swipe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/present_swipe">
+        android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_present"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible"
-            />
+            android:visibility="visible" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     <ImageView
         android:id="@+id/imgNoRecordspr"
         android:layout_width="170dp"
