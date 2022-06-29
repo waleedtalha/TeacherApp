@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cwise.teacherappkotlin">
+    package="com.cwise.teacherappkotlin" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TeacherAppKotlin">
+        android:theme="@style/Theme.TeacherAppKotlin" >
+        <activity
+            android:name=".activities.NotificationActivity"
+            android:exported="true" />
         <activity
             android:name=".activities.PresentRecActivity"
             android:exported="true" />
